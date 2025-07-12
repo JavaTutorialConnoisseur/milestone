@@ -1,5 +1,6 @@
 
-# Yardstick Gaming Benchmark
+# Milestone
 
-Yardstick is a benchmark for Modifiable Virtual Environments (MVEs).
-Learn how to benchmark your MVE by reading the [tutorial](docs/tutorial.md).
+A fork of *Yardstick*, a benchmark for Modifiable Virtual Environments (MVEs) ([tutorial](docs/tutorial.md)).
+
+TODO: add README
