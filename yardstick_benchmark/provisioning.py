@@ -59,3 +59,24 @@ class Das(object):
         for reservation in reservations_to_cancel:
             self._cancel_reservation(reservation)
             del self._reservation_map[reservation]
+
+
+class Local(object):  # not sure if this needs to even be an objectclass
+    def __init__(self):
+        self._nodes: set[Node] = set()
+
+    def provision(self, num: int = 1) -> list[Node]:
+        nodes = [
+            Node(
+                host="localhost",
+                wd=Path(tempfile.mkdtemp(prefix="yardstick-local-")),
+            )
+            for _ in range(num)
+        ]
+        self._nodes.update(nodes)
+        return nodes
+
+    def release(self, machines: list[Node]) -> None:
+        for node in machines:
+            shutil.rmtree(node.wd, ignore_errors=True)
+            self._nodes.discard(node)
