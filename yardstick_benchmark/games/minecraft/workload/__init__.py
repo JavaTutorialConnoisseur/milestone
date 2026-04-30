@@ -1,1 +1,2 @@
 from yardstick_benchmark.games.minecraft.workload.walkaround import WalkAround
+from yardstick_benchmark.games.minecraft.workload.survey_perimeter import SurveyPerimeter
